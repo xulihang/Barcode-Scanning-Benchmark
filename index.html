@@ -11,30 +11,32 @@
           border: 1px solid black;
           text-align: center;
           max-width: 400px;
+          min-width: 50px;
           overflow: auto;
+          word-break: break-word;
         }
         body {
-          margin: 0; 
-          width: 100%; 
+          margin: 0;
+          width: 100%;
           overflow-x: hidden
         }
-        
+
     </style>
 </head>
 
 <body>
-    <h2>General Stats</h2>
-    <div id="tableStats"></div>
-        
-    <h2>Processing Results of All Frames</h2>
-    <div id="framesProcessingStats"></div>
-    <h2>Index of the First Found Frame</h2>
-    <div id="frameIndexStats"></div>
-    <h2>Video Position of the First Found Frame</h2>
-    <div id="positionStats"></div>
-    <script>
+<h2>General Stats</h2>
+<div id="tableStats"></div>
+
+<h2>Processing Results of All Frames</h2>
+<div id="framesProcessingStats"></div>
+<h2>Index of the First Found Frame</h2>
+<div id="frameIndexStats"></div>
+<h2>Video Position of the First Found Frame</h2>
+<div id="positionStats"></div>
+<script>
     loadData();
-    
+
     function getQueryVariable(variable){
         var query = window.location.search.substring(1);
         var vars = query.split("&");
@@ -49,7 +51,7 @@
         var result = JSON.parse(jsonStr);
         displayStats(result);
     }
-    
+
     function loadData(){
         var url = getQueryVariable("path");
         if (url != "") {
@@ -60,19 +62,19 @@
                     console.log(xhr.status);
                     console.log(xhr.responseText);
                     displayJSONData(xhr.responseText);
-                   
+
                 }
             }
             xhr.send();
         }
     }
-    
+
     function displayStats(result){
         displayStatsTable(result);
         for (let filename in result) {
             console.log(filename);
             let fileResult = result[filename];
-            
+
             displayFirstFramePositionChart(filename,fileResult);
             displayFirstFrameIndexChart(filename,fileResult);
             displayFrameProcessingInfoInFrameModeChart(filename,fileResult);
@@ -114,7 +116,7 @@
             yAxis: {},
             // Declare several bar series, each will be mapped
             // to a column of dataset.source by default.
-            series: [{ type: 'bar', label: seriesLabel }, 
+            series: [{ type: 'bar', label: seriesLabel },
                      { type: 'bar', label: seriesLabel }]
         };
         option && myChart.setOption(option);
@@ -156,7 +158,7 @@
             yAxis: {},
             // Declare several bar series, each will be mapped
             // to a column of dataset.source by default.
-            series: [{ type: 'bar', label: seriesLabel }, 
+            series: [{ type: 'bar', label: seriesLabel },
                      { type: 'bar', label: seriesLabel }]
         };
         option && myChart.setOption(option);
@@ -193,7 +195,7 @@
                     firstBarcodeResultFrameMode.push("N/A");
                 }
             }
-            
+
             let tableStats = document.getElementById("tableStats");
             let p = document.createElement("p");
             p.innerText = filename+":";
@@ -214,7 +216,7 @@
             thead.append(headRow)
             console.log(thead);
             console.log(headRow);
-            
+
             let dataArray = [firstBarcodeFoundPositionArray,
                               firstBarcodeFoundFrameIndexArray,
                               videoModeFramesProcessingInfo,
@@ -254,7 +256,7 @@
         }
         return name
     }
-    
+
     function displayFrameProcessingInfoInFrameModeChart(filename,fileResult){
         for (let SDK in fileResult) {
             let SDKResult = fileResult[SDK];
