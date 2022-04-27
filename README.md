@@ -2,7 +2,7 @@
 
 A benchmark on five 5-second videos. There are four EAN13 video in different angles and one QR code video. Two SDKs are used and compared: [Dynamsoft Barcode Reader](https://www.dynamsoft.com/barcode-reader/overview/) and [ZXing](https://github.com/journeyapps/zxing-android-embedded).
 
-The video is shot using CameraX on Sharp Aquos S2. The benchmark is run on it as well.
+The video is shot using CameraX on Sharp Aquos S2. The benchmark is run on it as well. You can find the Android benchmark app [here](https://github.com/xulihang/CameraXVideo).
 
 The benchmark is done in two modes: frame mode which reads every frames and video mode which emulates live scan.
 
