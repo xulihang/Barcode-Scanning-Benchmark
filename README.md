@@ -1,2 +1,3 @@
 # Barcode-Scanning-Benchmark
-Barcode Reading Benchmark of Video Files
+
+Barcode Scanning Benchmark of Video Files
