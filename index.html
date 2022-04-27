@@ -182,8 +182,16 @@
                 firstBarcodeFoundFrameIndexArray.push(framesModeResult["firstDecodedFrameIndex"]);
                 videoModeFramesProcessingInfo.push(videoModeResult["framesWithBarcodeFound"] + "/" + videoModeResult["framesProcessed"]);
                 frameModeFramesProcessingInfo.push(framesModeResult["framesWithBarcodeFound"] + "/" + framesModeResult["framesProcessed"]);
-                firstBarcodeResultVideoMode.push(videoModeResult["firstFoundResult"]);
-                firstBarcodeResultFrameMode.push(framesModeResult["firstFoundResult"]);
+                if  (videoModeResult["firstFoundResult"]!="") {
+                    firstBarcodeResultVideoMode.push(videoModeResult["firstFoundResult"]);
+                }else{
+                    firstBarcodeResultVideoMode.push("N/A");
+                }
+                 if  (framesModeResult["firstFoundResult"]!="") {
+                    firstBarcodeResultFrameMode.push(framesModeResult["firstFoundResult"]);
+                }else{
+                    firstBarcodeResultFrameMode.push("N/A");
+                }
             }
             
             let tableStats = document.getElementById("tableStats");
