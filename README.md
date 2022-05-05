@@ -30,4 +30,7 @@ We can see that Dynamsoft Barcode Reader has a better decoding rate and quicker 
 
 Based on the test, at the beginning of the video, the frame images may be dark and out of focus. The SDKs spend a lot of time on decoding these frames. We can skip these frames to improve speed. Dynamsoft Camera Enhancer is useful in this aspect as it can filter out blurry frames.
 
+### Blog
+
+[Record a Video using CameraX and Read Barcodes from Video Files](https://www.dynamsoft.com/codepool/camerax-video-recording-and-barcode-reading.html)
 
